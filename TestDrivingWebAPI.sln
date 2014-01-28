@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDrivingWebAPI", "TestDrivingWebAPI\TestDrivingWebAPI.csproj", "{0A1565E6-4871-4AF3-98A5-2C37B9C9E626}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZgzWebApi", "ZgzWebApi\ZgzWebApi.csproj", "{3F176E71-9A22-4DCD-BB32-3452C08AC7BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0A1565E6-4871-4AF3-98A5-2C37B9C9E626}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A1565E6-4871-4AF3-98A5-2C37B9C9E626}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A1565E6-4871-4AF3-98A5-2C37B9C9E626}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F176E71-9A22-4DCD-BB32-3452C08AC7BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F176E71-9A22-4DCD-BB32-3452C08AC7BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F176E71-9A22-4DCD-BB32-3452C08AC7BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F176E71-9A22-4DCD-BB32-3452C08AC7BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
