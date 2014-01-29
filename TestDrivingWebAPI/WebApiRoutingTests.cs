@@ -27,6 +27,19 @@ namespace TestDrivingWebAPI
             }
         }
 
+        [TestMethod]
+        public async Task GetLonganizaByNameShouldReturnALonganiza()
+        {
+            using ( var server = TestServer.Create<TestStartup>())
+            {
+                HttpResponseMessage response = await server.HttpClient.GetAsync("api/longanizas/graus");
+
+                var content = await response.Content.ReadAsAsync<Longaniza>();
+                Assert.IsTrue(response.IsSuccessStatusCode);
+                Assert.AreEqual("graus", content.Name);
+            }
+        }
+
         public class TestStartup
         {
             public void Configuration(IAppBuilder app)
