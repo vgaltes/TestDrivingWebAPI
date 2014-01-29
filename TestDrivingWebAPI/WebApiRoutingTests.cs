@@ -1,16 +1,15 @@
-﻿using System;
-using System.Net.Http;
-using Microsoft.Owin.Testing;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Threading.Tasks;
-using Owin;
-using System.Web.Http;
-using ZgzWebApi;
-using System.Collections.Generic;
-using ZgzWebApi.Model;
-
-namespace TestDrivingWebAPI
+﻿namespace TestDrivingWebAPI
 {
+    using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Threading.Tasks;
+    using System.Web.Http;
+    using FluentAssertions;
+    using Microsoft.Owin.Testing;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Owin;
+    using ZgzWebApi.Model;
+
     [TestClass]
     public class WebApiRoutingTests
     {
@@ -22,21 +21,21 @@ namespace TestDrivingWebAPI
                 HttpResponseMessage response = await server.HttpClient.GetAsync("api/longanizas");
 
                 var content = await response.Content.ReadAsAsync<IList<Longaniza>>();
-                Assert.IsTrue(response.IsSuccessStatusCode);
-                Assert.AreEqual(4, content.Count);
+                response.IsSuccessStatusCode.Should().BeTrue();
+                content.Should().HaveCount(4); ;
             }
         }
 
         [TestMethod]
         public async Task GetLonganizaByNameShouldReturnALonganiza()
         {
-            using ( var server = TestServer.Create<TestStartup>())
+            using (var server = TestServer.Create<TestStartup>())
             {
                 HttpResponseMessage response = await server.HttpClient.GetAsync("api/longanizas/graus");
 
                 var content = await response.Content.ReadAsAsync<Longaniza>();
-                Assert.IsTrue(response.IsSuccessStatusCode);
-                Assert.AreEqual("graus", content.Name);
+                response.IsSuccessStatusCode.Should().BeTrue();
+                content.Name.Should().Be("graus");
             }
         }
 
