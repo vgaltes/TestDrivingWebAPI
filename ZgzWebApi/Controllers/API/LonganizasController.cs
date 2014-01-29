@@ -22,5 +22,11 @@
         {
             return longanizaRepository.GetAll().Where(l => l.Name == name).First();
         }
+
+        [Route("~/api/shops/{id}/longanizas")]
+        public IList<Longaniza> GetByShop(int id)
+        {
+            return longanizaRepository.GetAll().Where(l => l.SelledBy.Select(s => s.Id).ToList().Contains(id)).ToList();
+        }
     }
 }

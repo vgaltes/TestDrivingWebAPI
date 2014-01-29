@@ -22,7 +22,7 @@
 
                 var content = await response.Content.ReadAsAsync<IList<Longaniza>>();
                 response.IsSuccessStatusCode.Should().BeTrue();
-                content.Should().HaveCount(4); ;
+                content.Should().HaveCount(4);
             }
         }
 
@@ -36,6 +36,21 @@
                 var content = await response.Content.ReadAsAsync<Longaniza>();
                 response.IsSuccessStatusCode.Should().BeTrue();
                 content.Name.Should().Be("graus");
+            }
+        }
+
+        [TestMethod]
+        public async Task GetLonganizasSelledByASpecificShop()
+        {
+            using ( var server = TestServer.Create<TestStartup>())
+            {
+                HttpResponseMessage response = await server.HttpClient.GetAsync("api/shops/3/longanizas");
+
+                var content = await response.Content.ReadAsAsync<IList<Longaniza>>();
+                response.IsSuccessStatusCode.Should().BeTrue();
+                content.Should().HaveCount(2);
+                content[0].Name.Should().Be("setas");
+                content[1].Name.Should().Be("trufa");
             }
         }
 
