@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Owin;
 using System.Web.Http;
 using ZgzWebApi;
+using System.Collections.Generic;
+using ZgzWebApi.Model;
 
 namespace TestDrivingWebAPI
 {
@@ -13,15 +15,15 @@ namespace TestDrivingWebAPI
     public class WebApiRoutingTests
     {
         [TestMethod]
-        public async Task GetGreetingShouldReturnGreeting()
+        public async Task GetAllLonganizasShouldReturnAllLonganizas()
         {
             using (var server = TestServer.Create<TestStartup>())
             {
-                HttpResponseMessage response = await server.HttpClient.GetAsync("api/greeting");
+                HttpResponseMessage response = await server.HttpClient.GetAsync("api/longanizas");
 
-                var content = await response.Content.ReadAsAsync<Greeting>();
+                var content = await response.Content.ReadAsAsync<IList<Longaniza>>();
                 Assert.IsTrue(response.IsSuccessStatusCode);
-                Assert.AreEqual("Hola Zaragoza!", content.Text);
+                Assert.AreEqual(4, content.Count);
             }
         }
 
