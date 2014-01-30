@@ -68,6 +68,22 @@
             }
         }
 
+        [TestMethod]
+        public async Task GetAllLonganizasFromVersionedControllerShouldReturnAllLonganizas()
+        {
+            using (var server = TestServer.Create<TestStartup>())
+            {
+                server.HttpClient.DefaultRequestHeaders.Add("api-version", "2");
+                HttpResponseMessage response = await server.CreateRequest("api/longanizas")
+                    .AddHeader("api-version", "2")
+                    .GetAsync();
+
+                var content = await response.Content.ReadAsAsync<IList<Longaniza>>();
+                response.IsSuccessStatusCode.Should().BeTrue();
+                content.Should().HaveCount(2);
+            }
+        }
+
         public class TestStartup
         {
             public void Configuration(IAppBuilder app)

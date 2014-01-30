@@ -52,11 +52,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\WebApiConfig.cs" />
-    <Compile Include="Controllers\API\LonganizasController.cs" />
+    <Compile Include="Controllers\API\LonganizasV2Controller.cs" />
+    <Compile Include="Controllers\API\LonganizasV1Controller.cs" />
     <Compile Include="Model\Shop.cs" />
     <Compile Include="Repositories\LonganizaRepository.cs" />
     <Compile Include="Model\Longaniza.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VersionConstraint.cs" />
+    <Compile Include="VersionedRoute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
