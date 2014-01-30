@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Net.Http;
+    using System.Net.Http.Formatting;
     using System.Threading.Tasks;
     using System.Web.Http;
     using FluentAssertions;
@@ -51,6 +52,19 @@
                 content.Should().HaveCount(2);
                 content[0].Name.Should().Be("setas");
                 content[1].Name.Should().Be("trufa");
+            }
+        }
+
+        [TestMethod]
+        public async Task PostALonganizaShouldReturSuccess()
+        {
+            using ( var server = TestServer.Create<TestStartup>())
+            {
+                var longanizaCatalana = new Longaniza{Name="catalana", Price=20, SelledBy=new List<Shop>{new Shop{Id=6, Name="Carniceria pepa"}}};
+                
+                HttpResponseMessage response = await server.HttpClient.PostAsync<Longaniza>("api/longanizas", longanizaCatalana, new JsonMediaTypeFormatter());
+
+                response.IsSuccessStatusCode.Should().BeTrue();
             }
         }
 
