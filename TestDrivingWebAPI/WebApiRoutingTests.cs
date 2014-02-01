@@ -77,21 +77,10 @@
                 HttpResponseMessage response = await server.CreateRequest("api/longanizas")
                     .AddHeader("api-version", "2")
                     .GetAsync();
-
+                    
                 var content = await response.Content.ReadAsAsync<IList<Longaniza>>();
                 response.IsSuccessStatusCode.Should().BeTrue();
                 content.Should().HaveCount(2);
-            }
-        }
-
-        public class TestStartup
-        {
-            public void Configuration(IAppBuilder app)
-            {
-                var config = new HttpConfiguration();
-                ZgzWebApi.Configuration.WebApiConfig.Register(config);
-
-                app.UseWebApi(config);
             }
         }
     }
