@@ -18,9 +18,10 @@ namespace TestDrivingWebAPI
         [TestMethod]
         public async Task UsingTopShouldReturnOnlyOneElement()
         {
-            using ( var server = TestServer.Create<TestStartup>())
+            using (var server = TestServer.Create<TestStartup>())
             {
-                HttpResponseMessage response = await server.HttpClient.GetAsync("api/odata/shops?$top=1");
+                HttpResponseMessage response = 
+                    await server.HttpClient.GetAsync("api/odata/shops?$top=1");
 
                 var content = await response.Content.ReadAsAsync<IList<Shop>>();
 

@@ -10,8 +10,8 @@
         public static void Register(HttpConfiguration config)
         {            
             config.MapHttpAttributeRoutes();
-            
-            var cors = new EnableCorsAttribute("http://example.com", "*", "*");
+
+            var cors = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors(cors);
 
             var appXmlType = config.Formatters.XmlFormatter.SupportedMediaTypes

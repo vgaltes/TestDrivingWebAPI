@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDrivingWebAPI", "TestDrivingWebAPI\TestDrivingWebAPI.csproj", "{0A1565E6-4871-4AF3-98A5-2C37B9C9E626}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZgzWebApi", "ZgzWebApi\ZgzWebApi.csproj", "{3F176E71-9A22-4DCD-BB32-3452C08AC7BB}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3E8D67E3-89E5-429B-8B63-25AEBC381014}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
@@ -14,11 +10,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3E8D67
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KatanaSample", "KatanaSample\KatanaSample.csproj", "{07C9CE2E-117D-45A3-8AEB-8E64A8259238}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDrivingWebAPI", "TestDrivingWebAPI\TestDrivingWebAPI.csproj", "{0A1565E6-4871-4AF3-98A5-2C37B9C9E626}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZgzWebApi", "ZgzWebApi\ZgzWebApi.csproj", "{3F176E71-9A22-4DCD-BB32-3452C08AC7BB}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebLonganizas", "WebLonganizas\WebLonganizas.csproj", "{93D2F4DC-0718-4A7C-98F4-580813C27DCA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZgzWebApiConsole", "ZgzWebApiConsole\ZgzWebApiConsole.csproj", "{EF5F132B-8510-46D1-B410-12A260A89852}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KatanaSample", "KatanaSample\KatanaSample.csproj", "{07C9CE2E-117D-45A3-8AEB-8E64A8259238}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClient", "TestClient\TestClient.csproj", "{397946FD-521D-4F9B-A111-F0DA3C9E1ED7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07C9CE2E-117D-45A3-8AEB-8E64A8259238}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07C9CE2E-117D-45A3-8AEB-8E64A8259238}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07C9CE2E-117D-45A3-8AEB-8E64A8259238}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07C9CE2E-117D-45A3-8AEB-8E64A8259238}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0A1565E6-4871-4AF3-98A5-2C37B9C9E626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0A1565E6-4871-4AF3-98A5-2C37B9C9E626}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A1565E6-4871-4AF3-98A5-2C37B9C9E626}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -42,10 +48,10 @@ Global
 		{EF5F132B-8510-46D1-B410-12A260A89852}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF5F132B-8510-46D1-B410-12A260A89852}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF5F132B-8510-46D1-B410-12A260A89852}.Release|Any CPU.Build.0 = Release|Any CPU
-		{07C9CE2E-117D-45A3-8AEB-8E64A8259238}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{07C9CE2E-117D-45A3-8AEB-8E64A8259238}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{07C9CE2E-117D-45A3-8AEB-8E64A8259238}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{07C9CE2E-117D-45A3-8AEB-8E64A8259238}.Release|Any CPU.Build.0 = Release|Any CPU
+		{397946FD-521D-4F9B-A111-F0DA3C9E1ED7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{397946FD-521D-4F9B-A111-F0DA3C9E1ED7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{397946FD-521D-4F9B-A111-F0DA3C9E1ED7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{397946FD-521D-4F9B-A111-F0DA3C9E1ED7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

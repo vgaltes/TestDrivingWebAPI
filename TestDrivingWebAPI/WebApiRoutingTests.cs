@@ -32,7 +32,8 @@
         {
             using (var server = TestServer.Create<TestStartup>())
             {
-                HttpResponseMessage response = await server.HttpClient.GetAsync("api/longanizas/graus");
+                HttpResponseMessage response = 
+                    await server.HttpClient.GetAsync("api/longanizas/graus");
 
                 var content = await response.Content.ReadAsAsync<Longaniza>();
                 response.IsSuccessStatusCode.Should().BeTrue();
@@ -43,7 +44,7 @@
         [TestMethod]
         public async Task GetLonganizasSelledByASpecificShop()
         {
-            using ( var server = TestServer.Create<TestStartup>())
+            using (var server = TestServer.Create<TestStartup>())
             {
                 HttpResponseMessage response = await server.HttpClient.GetAsync("api/shops/3/longanizas");
 
@@ -58,11 +59,13 @@
         [TestMethod]
         public async Task PostALonganizaShouldReturSuccess()
         {
-            using ( var server = TestServer.Create<TestStartup>())
+            using (var server = TestServer.Create<TestStartup>())
             {
-                var longanizaCatalana = new Longaniza{Name="catalana", Price=20, SelledBy=new List<Shop>{new Shop{Id=6, Name="Carniceria pepa"}}};
-                
-                HttpResponseMessage response = await server.HttpClient.PostAsync<Longaniza>("api/longanizas", longanizaCatalana, new JsonMediaTypeFormatter());
+                var longanizaCatalana = new Longaniza { Name = "catalana", Price = 20, SelledBy = new List<Shop> { new Shop { Id = 6, Name = "Carniceria pepa" } } };
+
+                HttpResponseMessage response = 
+                    await server.HttpClient
+                    .PostAsync<Longaniza>("api/longanizas", longanizaCatalana, new JsonMediaTypeFormatter());
 
                 response.IsSuccessStatusCode.Should().BeTrue();
             }
@@ -77,8 +80,9 @@
                 HttpResponseMessage response = await server.CreateRequest("api/longanizas")
                     .AddHeader("api-version", "2")
                     .GetAsync();
-                    
-                var content = await response.Content.ReadAsAsync<IList<Longaniza>>();
+
+                var content = await response.Content.
+                    ReadAsAsync<IList<Longaniza>>();
                 response.IsSuccessStatusCode.Should().BeTrue();
                 content.Should().HaveCount(2);
             }

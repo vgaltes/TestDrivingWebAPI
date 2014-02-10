@@ -1,6 +1,4 @@
-﻿
-
-namespace TestDrivingWebAPI
+﻿namespace TestDrivingWebAPI
 {
     using System.Web.Http;
     using Owin;

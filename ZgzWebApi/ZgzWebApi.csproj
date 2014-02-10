@@ -72,8 +72,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\WebApiConfig.cs" />
-    <Compile Include="Controllers\API\LonganizasV2Controller.cs" />
     <Compile Include="Controllers\API\LonganizasV1Controller.cs" />
+    <Compile Include="Controllers\API\LonganizasV2Controller.cs" />
     <Compile Include="Controllers\API\Odata\ShopsController.cs" />
     <Compile Include="Model\Shop.cs" />
     <Compile Include="Repositories\LonganizaRepository.cs" />

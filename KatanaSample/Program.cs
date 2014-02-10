@@ -28,7 +28,7 @@ namespace KatanaSample
     
             app.Run(context =>
             {
-                if ( context.Request.Path.Value == "/fail")
+                if (context.Request.Path.Value == "/fail")
                 {
                     throw new Exception("Random exception");
                 }
